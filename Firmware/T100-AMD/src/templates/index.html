@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>T101</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+		var socket = io();
+		socket.on('connect', function() {
+			console.log("Connected")
+			socket.emit('my_event', {data: 'I\'m connected!'});
+			
+			socket.on('my_response', function() {
+				console.log("Response")
+			})
+		});
+
+	</script>
+</head>
+<body>
+	Hello
+</body>
+</html>
